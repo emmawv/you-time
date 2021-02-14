@@ -4,14 +4,14 @@
 }
 
 #nprogress .bar {
-  background: red;
+  background: #40251b;
   position: fixed;
   z-index: 1031;
   top: 0;
   left: 0;
 
   width: 100%;
-  height: 5px;
+  height: 3px;
 }
 
 /* Fancy blur effect */
@@ -21,7 +21,7 @@
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px red, 0 0 5px red;
+  box-shadow: 0 0 10px #40251b, 0 0 5px #40251b;
   opacity: 1.0;
 
   -webkit-transform: rotate(3deg) translate(0px, -4px);
@@ -29,9 +29,9 @@
           transform: rotate(3deg) translate(0px, -4px);
 }
 
-/* Remove these to get rid of the spinner */
-#nprogress .spinner {
-  display: block;
+/* Remove these to get rid of the spinner 
+/* #nprogress .spinner {
+  display: none; /* Do not want to show spinner as it's on top of navbar
   position: fixed;
   z-index: 1031;
   top: 15px;
@@ -50,9 +50,9 @@
 
   -webkit-animation: nprogress-spinner 400ms linear infinite;
           animation: nprogress-spinner 400ms linear infinite;
-}
+} */
 
-.nprogress-custom-parent {
+/* .nprogress-custom-parent {
   overflow: hidden;
   position: relative;
 }
@@ -60,13 +60,13 @@
 .nprogress-custom-parent #nprogress .spinner,
 .nprogress-custom-parent #nprogress .bar {
   position: absolute;
-}
+} */
 
-@-webkit-keyframes nprogress-spinner {
+/* @-webkit-keyframes nprogress-spinner {
   0%   { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
 }
 @keyframes nprogress-spinner {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
+} */

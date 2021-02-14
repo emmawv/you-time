@@ -27,6 +27,7 @@ const NavbarStyles = styled.nav`
   }
 
   h2 {
+    text-transform: uppercase;
     padding: 0;
     margin: 0;
     display: inline-block;
@@ -52,7 +53,7 @@ const NavbarStyles = styled.nav`
   }
 
   .sections {
-    flex-basis: 70%;
+    flex-basis: 80%;
     text-align: right;
   }
 `;
@@ -61,7 +62,7 @@ const Nav = () => (
   <NavbarStyles>
     <div>
       <Link href="/">
-        <h2>YouTime</h2>
+        <h2>UTime</h2>
       </Link>
     </div>
     <div className="sections">
