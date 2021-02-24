@@ -7,14 +7,18 @@ import { endpoint, prodEndpoint } from '../config';
 
 function createClient({ headers, initialState }) {
   return new ApolloClient({
+    // Create a client and inject links that we have.
+    // Error handling link:
     link: ApolloLink.from([
       onError(({ graphQLErrors, networkError }) => {
+        // GraphQL errors like wrong password, requesting fields that don't exist...
         if (graphQLErrors)
           graphQLErrors.forEach(({ message, locations, path }) =>
             console.log(
               `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
             )
           );
+        // Network errors if backend is down, CORS issues...
         if (networkError)
           console.log(
             `[Network error]: ${networkError}. Backend is unreachable. Is it running?`
@@ -26,7 +30,7 @@ function createClient({ headers, initialState }) {
         fetchOptions: {
           credentials: 'include',
         },
-        // pass the headers along from this request. This enables SSR with logged in state
+        // pass the headers along from this request. This enables SSR with logged in state. Allows us to render on the server side the logged in state.
         headers,
       }),
     ]),

@@ -1,7 +1,1 @@
-const HomePage = () => (
-  <div>
-    <p>Home Page</p>
-  </div>
-);
-
-export default HomePage;
+export { default } from './products'; // The home page is the same as the products page.

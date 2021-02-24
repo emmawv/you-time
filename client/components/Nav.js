@@ -37,9 +37,9 @@ const NavbarStyles = styled.nav`
     display: inline-block;
     min-width: 40%;
     flex-grow: 1;
-    border: 1px solid white;
+    border: 1px solid rgb(255, 255, 255, 0.3);
     border-radius: 5px;
-    background: white;
+    background: rgb(255, 255, 255, 0.7);
     color: black;
     margin: 0 10px;
     text-align: left;
@@ -60,11 +60,9 @@ const NavbarStyles = styled.nav`
 
 const Nav = () => (
   <NavbarStyles>
-    <div>
-      <Link href="/">
-        <h2>UTime</h2>
-      </Link>
-    </div>
+    <Link href="/">
+      <h2>UTime</h2>
+    </Link>
     <div className="sections">
       <div className="sub-bar">
         <p>Search...</p>

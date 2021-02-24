@@ -1,12 +1,16 @@
 import 'dotenv/config'; // Makes variables in .env file available to us.
-import { User } from './schemas/User';
-import { Product } from './schemas/Product';
+
 import { createAuth } from '@keystone-next/auth';
 import { config, createSchema } from '@keystone-next/keystone/schema';
-import { withItemData, statelessSessions } from '@keystone-next/keystone/session'
+import { withItemData, statelessSessions } from '@keystone-next/keystone/session';
+
+import { User } from './schemas/User';
+import { Product } from './schemas/Product';
+import { ProductImage } from './schemas/ProductImage'
+import { insertSeedData } from './seed-data';
 
 const databaseURL =
-  process.env.DATABASE_URL || 'mongodb://localhost/keystone-you-time'; // Falls back to localhost in case tou don't have a BDURL running.
+  process.env.DATABASE_URL || 'mongodb://localhost/keystone-you-time'; // Falls back to localhost in case tou don't have a DBURL running.
 
 const sessionConfig = {
   // Authenticate users in the frontend to login to keystone backend.
@@ -36,11 +40,17 @@ export default withAuth( config({
     adapter: 'mongoose',
     url: databaseURL,
     // TODO: Add data seeding here.
+    async onConnect(keystone) {
+      console.log('⚡️ Connected to the database!')
+      // We only want the seed to happen if someone passes an arguent to keystone when they run it, not every time.
+      if(process.argv.includes('--seed-data')) await insertSeedData(keystone);
+    },
   },
   lists: createSchema({
     // Schema items go in here
     User, // User: User => If property name and variable you're setting it to are the same you can ommit the name.
-    Product
+    Product,
+    ProductImage,
   }),
   ui: {
     // Do you want people to be able to access the keystone UI? Generally you want people to manage all the data from the frontend of the application.

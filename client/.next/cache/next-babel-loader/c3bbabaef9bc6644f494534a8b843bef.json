@@ -1,0 +1,1 @@
+{"ast":null,"code":"import ProductsPage from './products';\nexport default Pro;","map":{"version":3,"sources":["/Users/emmawv/practice/you-time/client/pages/index.js"],"names":["ProductsPage","Pro"],"mappings":"AAAA,OAAOA,YAAP,MAAyB,YAAzB;AAEA,eAAeC,GAAf","sourcesContent":["import ProductsPage from './products';\n\nexport default Pro\n"]},"metadata":{},"sourceType":"module"}
