@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
 
 const NavbarStyles = styled.nav`
   background: var(--mocha);
@@ -11,6 +12,8 @@ const NavbarStyles = styled.nav`
   padding: 5px 10px;
   color: white;
   font-family: var(--titleFont);
+  position: fixed;
+  width: 100%;
 
   a {
     color: rgb(255, 255, 255, 0.7);
@@ -29,7 +32,7 @@ const NavbarStyles = styled.nav`
   h2 {
     text-transform: uppercase;
     padding: 0;
-    margin: 0;
+    margin: 0 15px;
     display: inline-block;
   }
 
@@ -39,10 +42,10 @@ const NavbarStyles = styled.nav`
     flex-grow: 1;
     border: 1px solid rgb(255, 255, 255, 0.3);
     border-radius: 5px;
-    background: rgb(255, 255, 255, 0.7);
     color: black;
     margin: 0 10px;
     text-align: left;
+    background: rgb(255, 255, 255, 0.5);
   }
 
   .sub-bar p {

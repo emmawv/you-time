@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
+import Product from './Product';
 
 // QUERY:
 // gql imports graphql-tag that turns our string into a proper graphQL query.
@@ -23,27 +25,12 @@ const ALL_PRODUCTS_QUERY = gql`
   }
 `;
 
-const ProductsList = styled.div`
+const ProductsListStyles = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 60px;
   text-align: center;
-`;
-
-const ProductCard = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  img {
-    height: 180px;
-    width: 110px;
-    object-fit: cover;
-    margin: 10px auto;
-  }
-
-  h4 {
-    text-transform: uppercase;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 `;
 
 const Products = () => {
@@ -52,36 +39,11 @@ const Products = () => {
   if (error) return <p>Error: {error.message}</p>;
   return (
     <div>
-      <ProductsList>
+      <ProductsListStyles>
         {data.allProducts.map((elm) => (
-          <ProductCard key={elm.id}>
-            <img
-              src={elm.photo.image.publicUrlTransformed}
-              alt={elm.photo.altText}
-            />
-            <h4>{elm.title}</h4>
-            <p
-              style={{
-                color: 'var(--cream)',
-                margin: '7px',
-                fontSize: '0.8em',
-              }}
-            >
-              {elm.author}
-            </p>
-            <hr
-              style={{
-                backgroundColor: 'var(--cream)',
-                opacity: '0.4',
-                width: '30px',
-                margin: '0 auto',
-                height: '1px',
-                border: 'none',
-              }}
-            />
-          </ProductCard>
+          <Product key={elm.id} product={elm} />
         ))}
-      </ProductsList>
+      </ProductsListStyles>
     </div>
   );
 };
