@@ -27,10 +27,10 @@ const ALL_PRODUCTS_QUERY = gql`
 
 const ProductsListStyles = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 60px;
+  grid-gap: 70px;
   text-align: center;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  padding: 100px 12%;
 `;
 
 const Products = () => {

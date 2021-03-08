@@ -3,20 +3,22 @@ import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 
 const NavbarStyles = styled.nav`
-  background: var(--mocha);
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin: 0;
   padding: 5px 10px;
-  color: white;
+  color: rgb(var(--brown));
   font-family: var(--titleFont);
   position: fixed;
   width: 100%;
+  border-bottom: 1px solid rgba(var(--brown), 0.1);
+  z-index: 50;
+  font-family: var(--titleFont);
 
   a {
-    color: rgb(255, 255, 255, 0.7);
+    color: rgb(var(--brown), 0.7);
     text-decoration: none;
     padding: 15px 5px;
     margin: 0 5px;
@@ -26,7 +28,31 @@ const NavbarStyles = styled.nav`
   }
 
   a:hover {
-    color: white;
+    color: rgb(var(--brown));
+    position: relative;
+  }
+
+  a:hover:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-bottom: 1.9px solid rgb(var(--brown));
+    height: 80%;
+
+    animation: underline 0.7s 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes underline {
+    from {
+      width: 0;
+    }
+    to {
+      width: 87%;
+    }
   }
 
   h2 {
@@ -38,44 +64,63 @@ const NavbarStyles = styled.nav`
 
   .sub-bar {
     display: inline-block;
-    min-width: 40%;
-    flex-grow: 1;
-    border: 1px solid rgb(255, 255, 255, 0.3);
-    border-radius: 5px;
+    min-width: 250px;
+    border: 1px solid rgb(var(--mocha), 0.7);
+    border-radius: 15px;
     color: black;
     margin: 0 10px;
     text-align: left;
-    background: rgb(255, 255, 255, 0.5);
+    background: rgb(var(--mocha), 0.7);
   }
 
   .sub-bar p {
     padding: 5px 10px;
     margin: 0;
     font-family: var(--textFont);
-    color: grey;
+    color: white;
   }
 
   .sections {
-    flex-basis: 80%;
+    min-width: 70vw;
+    flex-grow: 1;
     text-align: right;
+    flex-shrink: 0;
   }
 `;
 
-const Nav = () => (
-  <NavbarStyles>
-    <Link href="/">
-      <h2>UTime</h2>
-    </Link>
-    <div className="sections">
-      <div className="sub-bar">
-        <p>Search...</p>
+const Nav = () => {
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener('scroll', function () {
+      if (document.scrollingElement.scrollTop >= 50) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    });
+  }, [scroll]);
+
+  return (
+    <NavbarStyles
+      style={{
+        backgroundColor: scroll ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+      }}
+    >
+      <Link href="/">
+        <h2>UTime</h2>
+      </Link>
+      <div className="sections">
+        <div className="sub-bar">
+          <p>Search...</p>
+        </div>
+        <Link href="/products">Products</Link>
+        <Link href="/sell">Sell</Link>
+        <Link href="/orders">Orders</Link>
+        <Link href="/account">Account</Link>
       </div>
-      <Link href="/products">Products</Link>
-      <Link href="/sell">Sell</Link>
-      <Link href="/orders">Orders</Link>
-      <Link href="/account">Account</Link>
-    </div>
-  </NavbarStyles>
-);
+    </NavbarStyles>
+  );
+};
 
 export default Nav;

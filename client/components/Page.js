@@ -8,13 +8,15 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    --mocha: #A6837B;
-    --cream: #F2D3CB;
-    --brown: #593F39;
-    --turquoise: #7BA696;
-    --darkTurquoise: #30594A;
+    --mocha: 171, 143, 120;
+    --cream: 209, 192, 178;
+    --turquoise: 120, 163, 171;
+    --darkTurquoise: 40, 65, 69;
+    --lightGray: 208, 204, 195;
+    --darkGray: 122,108,95;
+    --brown: 94, 74, 57;
     --bs: 5px 5px 24px 0 rgba(0, 0, 0, 0.09);
-    --maxWidth: 1000px;
+    --maxWidth: 100vw;
     --titleFont: 'Inter',--apple-system, BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetice Neue', sans-serif;
     --textFont: 'Roboto', --apple-system, BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetice Neue', sans-serif;
     box-sizing: border-box;
@@ -37,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
 const InnerStyles = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
-  padding: 100px 2rem;
+  letter-spacing: 1px;
 `;
 
 const Page = ({ children }) => (

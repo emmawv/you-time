@@ -1,0 +1,1 @@
+{"ast":null,"code":"const HomePage = () => {};","map":{"version":3,"sources":["/Users/emmawv/practice/you-time/client/pages/index.js"],"names":["HomePage"],"mappings":"AAAA,MAAMA,QAAQ,GAAG,MAAM,CAEtB,CAFD","sourcesContent":["const HomePage = () => {\n  \n}\n"]},"metadata":{},"sourceType":"script"}

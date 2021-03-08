@@ -3,18 +3,7 @@ import styled from 'styled-components';
 const ProductStyles = styled.div`
   display: flex;
   flex-direction: column;
-
-  img {
-    height: 180px;
-    width: 110px;
-    object-fit: cover;
-    margin: 10px auto;
-    box-shadow: var(--bs);
-  }
-
-  img:hover {
-    box-shadow: none;
-  }
+  justify-content: space-between;
 
   h4 {
     text-transform: uppercase;
