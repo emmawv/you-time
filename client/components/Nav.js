@@ -9,7 +9,7 @@ const NavbarStyles = styled.nav`
   align-items: center;
   margin: 0;
   padding: 5px 10px;
-  color: rgb(var(--brown));
+  color: rgb(var(--darkGray));
   font-family: var(--titleFont);
   position: fixed;
   width: 100%;
@@ -18,7 +18,7 @@ const NavbarStyles = styled.nav`
   font-family: var(--titleFont);
 
   a {
-    color: rgb(var(--brown), 0.7);
+    color: rgb(var(--darkGray), 0.7);
     text-decoration: none;
     padding: 15px 5px;
     margin: 0 5px;
@@ -28,7 +28,7 @@ const NavbarStyles = styled.nav`
   }
 
   a:hover {
-    color: rgb(var(--brown));
+    color: rgb(var(--darkGray));
     position: relative;
   }
 
@@ -38,10 +38,10 @@ const NavbarStyles = styled.nav`
     position: absolute;
     top: 0;
     bottom: 0;
-    border-bottom: 1.9px solid rgb(var(--brown));
+    border-bottom: 1.9px solid rgb(var(--darkGray));
     height: 80%;
 
-    animation: underline 0.7s 1;
+    animation: underline 0.5s 1;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
   }
@@ -64,13 +64,17 @@ const NavbarStyles = styled.nav`
 
   .sub-bar {
     display: inline-block;
-    min-width: 250px;
-    border: 1px solid rgb(var(--mocha), 0.7);
+    width: 250px;
+    border: 1px solid rgb(var(--darkGray), 0.7);
     border-radius: 15px;
     color: black;
     margin: 0 10px;
     text-align: left;
-    background: rgb(var(--mocha), 0.7);
+    background: rgb(var(--darkGray), 0.7);
+
+    @media (max-width: 700px) {
+      width: 150px;
+    }
   }
 
   .sub-bar p {

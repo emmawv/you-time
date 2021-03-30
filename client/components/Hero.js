@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const HeroStyles = styled.div`
-  min-height: 500px;
   font-family: var(--textFont);
   font-size: 3em;
   width: 100vw;
@@ -26,7 +25,7 @@ const HeroStyles = styled.div`
 
   section {
     z-index: 2;
-    padding-top: 150px;
+    padding: 50px 0 80px;
     line-height: 60px;
   }
 `;

@@ -30,7 +30,7 @@ const ProductsListStyles = styled.div`
   grid-gap: 70px;
   text-align: center;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  padding: 100px 12%;
+  padding: 0 12%;
 `;
 
 const Products = () => {

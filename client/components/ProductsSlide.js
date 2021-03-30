@@ -25,7 +25,7 @@ const ALL_PRODUCTS_QUERY = gql`
 const SlideStyles = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 60px;
   text-align: center;
 `;
@@ -39,7 +39,6 @@ const ProductSlide = () => {
       {data.allProducts.slice(0, 3).map((elm) => (
         <Product key={elm.id} product={elm} />
       ))}
-      ;
     </SlideStyles>
   );
 };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const PriceTag = styled.span`
-  background: rgb(var(--mocha));
+  background: rgb(var(--cream));
   color: white;
   padding: 5px 15px;
   line-height: 1;
@@ -17,13 +17,13 @@ const PriceTag = styled.span`
     display: block;
     width: 22px;
     height: 100%;
-    background: rgb(var(--mocha));
+    background: rgb(var(--cream));
     position: absolute;
     top: -11px;
     right: -23px;
     border-right: 17px solid white;
-    border-top: 17px solid rgb(var(--mocha));
-    border-bottom: 17px solid rgb(var(--mocha));
+    border-top: 17px solid rgb(var(--cream));
+    border-bottom: 17px solid rgb(var(--cream));
   }
 
   &::after {
@@ -35,8 +35,8 @@ const PriceTag = styled.span`
     position: absolute;
     top: -11px;
     right: -1px;
-    border-top: 5px solid rgb(var(--mocha));
-    border-right: 5px solid rgb(var(--mocha));
+    border-top: 5px solid rgb(var(--cream));
+    border-right: 5px solid rgb(var(--cream));
     border-left: 5px solid rgb(var(--brown));
     border-bottom: 5px solid rgb(var(--brown));
   }

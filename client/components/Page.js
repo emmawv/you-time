@@ -8,12 +8,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    --mocha: 171, 143, 120;
-    --cream: 209, 192, 178;
-    --turquoise: 120, 163, 171;
-    --darkTurquoise: 40, 65, 69;
-    --lightGray: 208, 204, 195;
-    --darkGray: 122,108,95;
+    --offWhite: 240, 241, 238;
+    --darkGray: 77, 74, 75;
+    --cream: 180, 162, 162;
+    --turquoise: 120, 171, 134;
+    --darkTurquoise: 40, 69, 48;
     --brown: 94, 74, 57;
     --bs: 5px 5px 24px 0 rgba(0, 0, 0, 0.09);
     --maxWidth: 100vw;
@@ -40,6 +39,7 @@ const InnerStyles = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
   letter-spacing: 1px;
+  padding: 100px 0;
 `;
 
 const Page = ({ children }) => (

@@ -7,14 +7,14 @@ const SectionStyles = styled.div`
   text-align: center;
 
   & > section {
-    padding: 50px 100px 0;
+    padding: 80px 15%;
   }
 
   hr {
     width: 70px;
     margin: 20px auto;
     height: 1.5px;
-    background: rgba(var(--mocha));
+    background: rgba(var(--darkGray));
     border-style: none;
   }
 
@@ -23,9 +23,9 @@ const SectionStyles = styled.div`
   }
 
   .browse {
-    background: rgb(var(--mocha));
+    background: rgb(var(--darkGray));
     color: white;
-    min-height: 200px;
+    min-height: 250px;
 
     h2 {
       margin-bottom: 15px;
